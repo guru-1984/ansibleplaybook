@@ -1,6 +1,6 @@
 #!/bin/sh
 
-RG="$1" #pass Resource group name , can pull all the vm ips and names
+RG="$1" #pass resource group name , can pull all the vm ips and names
 #Ip=$(az vm list-ip-addresses -g $RG  | grep -A1 privateIpAddresses | awk '{print $1}' | egrep -v "privateIpAddresses|--" | sed -e 's/^"//' -e 's/"$//')
 #IP=$(az vm list-ip-addresses -g $RG  | grep ipAddress | awk '{print $2}' |  sed -e 's/^"//' -e 's/",$//')
 Ip=$(az vm list-ip-addresses -g $RG  | grep ipAddres | awk '{print $2}' |  sed -e 's/^"//' -e 's/",$//')
