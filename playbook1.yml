@@ -6,9 +6,9 @@
   hosts: localhost
   connection: local
   vars:
-    resource_group: "trainerrg1"
-    vm_name: testvm
-    location: eastus
+    resource_group: "ubunutrg1"
+    vm_name: ubuntuvm
+    location: westus2
   tasks:
   - name: Create a resource group
     azure_rm_resourcegroup:
@@ -54,8 +54,8 @@
       resource_group: "{{ resource_group }}"
       name: "{{ vm_name }}"
       vm_size: Standard_DS1_v2
-      admin_username: azureuser
-      admin_password: Password@123
+      admin_username: guru
+      admin_password: Newone@13579
       network_interfaces: "{{ vm_name }}"
       image:
         offer: UbuntuServer
