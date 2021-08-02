@@ -32,10 +32,10 @@
       pip:
         name: docker
 
-    - name: Pull default Docker image
-      docker_image:
-        name: "{{ default_container_image }}"
-        source: pull
+        #- name: Pull default Docker image
+        #docker_image:
+        # name: "{{ default_container_image }}"
+        #source: pull
 
     # Creates the number of containers defined by the variable create_containers, using values from vars file
     #- name: Create default containers
@@ -46,9 +46,12 @@
     #     state: present
     #  with_sequence: count={{ create_containers }}
 
-        #- name: stop existing docker
-        # shell: docker stop $(docker ps -aq)
+    - name: stop existing docker
+      shell: docker stop $(docker ps -aq)
 
+    - name: Pull docker image
+      shell:  docker pull guru4urs/project1:latest 
+      
     - name: start docker image image
-      shell:  "{{ default_container_command }}"
+      shell:  docker run -p 8080:8080 -dt guru4urs/project1:latest
 
