@@ -47,7 +47,7 @@
     #  with_sequence: count={{ create_containers }}
 
     - name: stop existing docker
-      shell: docker stop $(docker ps -aq)
+      shell: docker rm --force $(docker ps -aq)
 
     - name: Pull docker image
       shell:  docker pull guru4urs/project1:latest 
