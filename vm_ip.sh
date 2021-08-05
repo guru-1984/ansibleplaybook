@@ -7,7 +7,7 @@ Ip=$(az vm list-ip-addresses -g $RG  | grep ipAddres | awk '{print $2}' |  sed -
 #echo "$Ip"
 Name=$(az vm list-ip-addresses -g $RG | grep -A1 "virtualMachine" | awk '{print $2}' | egrep -v "{|^$" | sed -e 's/^"//' -e 's/",$//')
 #echo "$Name"
-
+#/home/guru/keys1.sh "guru" "$IP"
 echo "\n["$RG"]" >> /home/guru/ipinventory_"$RG"
 echo "$Ip"
 echo "$Ip" >> /home/guru/ipinventory_"$RG"
