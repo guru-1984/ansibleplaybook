@@ -53,5 +53,5 @@
       shell:  docker pull guru4urs/project1:latest 
       
     - name: start docker image image
-      shell:  docker run -p 8080:8080 -dt guru4urs/project1:latest
+      shell:  docker run -it -d --name tomcpr -p 8080:8080 guru4urs/project1:latest
 
